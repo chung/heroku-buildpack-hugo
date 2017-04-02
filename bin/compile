@@ -36,14 +36,15 @@ mv $CACHE_DIR/$EXECUTABLE_NAME/$EXECUTABLE_NAME $BUILD_DIR/hugo | indent
 
 # Fetch a theme specified in the .hugotheme file
 if [ -e $BUILD_DIR/.hugotheme ]; then
-  echo "\n-----> Getting the theme"
+  #echo "\n-----> Getting the theme:"
   THEME_URL="`cat $BUILD_DIR/.hugotheme`"
+  echo "\n-----> Getting the theme: $THEME_URL"
   rm -rf $BUILD_DIR/themes && mkdir $BUILD_DIR/themes && cd $BUILD_DIR/themes
   git clone $THEME_URL
 fi
 
 # Build the site
-echo "\n-----> Building the site:"
+echo "\n-----> Building the site..."
 cd $BUILD_DIR
 mkdir -p static | indent
 ./hugo | indent
