@@ -43,7 +43,7 @@ if [ -e $BUILD_DIR/.hugotheme ]; then
 fi
 
 # Build the site
-echo "\n-----> Building the site"
+echo "\n-----> Building the site:"
 cd $BUILD_DIR
 mkdir -p static | indent
-./hugo -t hugo-theme-learn | indent
+./hugo | indent
